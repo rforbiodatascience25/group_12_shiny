@@ -5,6 +5,9 @@ library("bslib")
 # Define the User Interface (Frontend)
 ui <- page_fluid(
   layout_columns(
+    
+    ## gene_dna part is missing the possibility to change probabibility of base
+    
     col_widths = 12,
     card(
       titlePanel("Virtual Central Dogma"),
@@ -23,4 +26,15 @@ ui <- page_fluid(
     card_header("RNA Polymerase output"),
     mainPanel(
       verbatimTextOutput(outputId = "rna")
-)))
+)),
+layout_columns(
+  col_widths = 12,
+  card(
+    card_header("Translation"),
+    textInput(inputId = "RNA_seq", 
+              label = "Insert RNA sequence to translate:", 
+              value = ""),
+    verbatimTextOutput("protein")
+  )
+)
+)
