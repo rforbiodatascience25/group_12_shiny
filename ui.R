@@ -14,18 +14,17 @@ ui <- page_fluid(
       card_header("About"),
       card_body(
         helpText(HTML(
-          "Welcome to the Virtual Central Dogma App! 🧬<br><br>
-          This interactive app allows you to explore the central dogma of molecular biology — from DNA to RNA to protein — in a virtual and intuitive way.<br><br>
+          "Welcome to the Virtual Central Dogma App! <br><br>
+          This simple shiny app allows you to explore the central dogma of molecular biology. You can execute all steps of the process from DNA to RNA to protein, all in virtual way.<br><br>
           1. <b>Virtual Gene Generation</b><br>
-          - Use the slider to select the number of DNA bases (must be divisible by 3).<br>
-          - Adjust the probabilities of each nucleotide (A, T, C, G).<br><br>
-          2. <b>Transcription Simulation</b><br>
-          - The app automatically transcribes your virtual DNA into RNA.<br><br>
-          3. <b>Translation Simulation</b><br>
-          - The RNA is translated into a protein sequence based on codon mapping.<br><br>
-          4. <b>Base Count Analysis</b><br>
-          - View base frequencies (A, T, C, G).<br><br>
-          <i>Tip:</i> Probabilities should sum to 1. If not, they are normalized automatically."
+          - Use the slider to select the number of DNA bases, must be divisible by 3.<br>
+          - Adjust the probabilities of each nucleotide (A, T, C, G), which should sum to 1.<br><br>
+          2. <b>Virtual RNA polymerase: Transcription</b><br>
+          - The copied in DNA sequence is translated into RNA sequence.<br><br>
+          3. <b>Virtual Ribosome:  Translation</b><br>
+          - The copied in RNA sequence is translated into a protein sequence based on codon mapping.<br><br>
+          4. <b>Simple Base Counts</b><br>
+          - View base frequencies (A, T, C, G) visualised in barplot.<br><br>"
         ))
       )
     )

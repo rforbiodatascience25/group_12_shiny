@@ -8,6 +8,7 @@ gene_dna <- function(n_bases, prob_A, prob_T, prob_C, prob_G){
   if( n_bases %% 3 != 0 ){
     stop("The argument to the parameter 'l' has to be divisible by 3")
   }
+  
   dna_vector <- sample(
     x = c("A", "T", "C", "G"),
     size = n_bases,
