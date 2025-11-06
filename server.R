@@ -20,7 +20,7 @@ server <- function(input, output) {
   
   #Virtual Ribosome
   output$protein <- renderText({
-    translate_rna(input$RNA_seq)
+    translate_rna(rna = input$RNA_seq)
   })
   
 }
