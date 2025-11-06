@@ -7,11 +7,16 @@ source(file = "app_functions.R")
 
 # Define the Server (Backend)
 server <- function(input, output) {
-  #
-  #
-  #gene dna part here
-  #
-  #
+  #Virtual DNA
+  output$dna <- renderText({
+    gene_dna(
+      n_bases = input$n_bases,
+      prob_A = input$prob_A,
+      prob_T = input$prob_T,
+      prob_C = input$prob_C,
+      prob_G = input$prob_G
+    )
+  })
   
   #Virtual RNA Polymerase
   output$rna <- renderText({

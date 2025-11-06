@@ -1,13 +1,18 @@
-# Virtual gene -> missing the changes to choose the probability
-gene_dna <- function(length, base_probs = c(0.25, 0.25, 0.25, 0.25)){
-  if( length %% 3 != 0 ){
+# Virtual gene
+gene_dna <- function(n_bases, prob_A, prob_T, prob_C, prob_G){
+  p <- c(prob_A, prob_T, prob_C, prob_G)
+  
+  if( abs(sum(p) - 1) > 1e-10 ){
+    stop(paste("The probabilities must sum to 1. Current sum:", sum(p)))
+  }
+  if( n_bases %% 3 != 0 ){
     stop("The argument to the parameter 'l' has to be divisible by 3")
   }
   dna_vector <- sample(
     x = c("A", "T", "C", "G"),
-    size = length,
+    size = n_bases,
     replace = TRUE,
-    prob = base_probs)
+    prob = c(prob_A, prob_T, prob_C, prob_G))
   dna_string <- paste0(
     x = dna_vector,
     collapse = "")
