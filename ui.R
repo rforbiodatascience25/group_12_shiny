@@ -15,22 +15,19 @@ ui <- page_fluid(
       style = "background-color: #f0f0f0; padding: 15px;"
       )),
   
+  #Virtual RNA Polymerase
   layout_columns(
     col_widths = 12,
     card(
+      card_header("Transcription"),
       layout_columns(
         textInput(inputId = "DNA_seq",
-                  label = "DNA Sequence",
-                  value = "")
+                  label = "Insert a DNA sequence to transcribe:",
+                  value = ""),
+        verbatimTextOutput("rna")
         ))),
-  
-  layout_columns(
-    col_widths = 12,
-    card_header("RNA Polymerase output"),
-    mainPanel(
-      verbatimTextOutput(outputId = "rna")
-      )),
-  
+ 
+  #Virtual Ribosome
   layout_columns(
     col_widths = 12,
     card(
